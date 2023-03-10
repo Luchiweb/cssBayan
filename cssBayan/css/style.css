@@ -3,6 +3,8 @@
 
 body {
   font-family: "Rampart One", cursive;
+  color: #5a5aa1;
+  background-color: #eeeef8;
   margin: 0.5rem;
 }
 
@@ -12,11 +14,47 @@ body {
   justify-content: center;
 }
 
+.bayan {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.bayan__item {
+  margin-top: 1rem;
+}
+
 .bayan__item-title {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #cfcfe7;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.bayan__item-input {
+  width: 0;
+  height: 0;
+}
+
+.bayan__content {
+  height: 0;
+  opacity: 0;
+  transition: all 0.7s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.bayan__item-input:hover + .bayan__content,
+.bayan__item-input:checked + .bayan__content {
+  height: 100%;
+  opacity: 1;
 }
 
 .bayan__item-meme {
-  display: flex;
-  justify-content: center;
+  max-width: 15rem;
+}
+
+.arrow img {
+  max-width: 100%;
 }
