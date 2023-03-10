@@ -1,0 +1,22 @@
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+
+body {
+  font-family: "Rampart One", cursive;
+  margin: 0.5rem;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bayan__item-title {
+  display: block;
+}
+
+.bayan__item-meme {
+  display: flex;
+  justify-content: center;
+}
