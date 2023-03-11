@@ -6,17 +6,18 @@ body {
   color: #5a5aa1;
   background-color: #eeeef8;
   margin: 0.5rem;
+  font-size: 1rem;
 }
 
 .main-title {
   text-align: center;
   margin-bottom: 0.5em;
-  font-size: 3rem;
+  font-size: 3em;
 }
 
 .bayan {
   width: 100%;
-  max-width: 40rem;
+  max-width: 40em;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
@@ -37,7 +38,7 @@ body {
 }
 
 .bayan__item-title {
-  font-size: 1rem;
+  font-size: 1em;
   color: #8282cd;
 }
 
@@ -47,16 +48,16 @@ body {
   transition: all 1s ease;
 }
 
-.bayan__content {
+.bayan__item-content {
   height: 0;
   opacity: 0;
-  transition: opacity 0.7s ease-in;
+  transition: all 0.5s ease-in;
   display: flex;
   justify-content: center;
   margin: 0;
 }
 
-.bayan__item-input:checked ~ .bayan__content {
+.bayan__item-input:checked ~ .bayan__item-content {
   height: 100%;
   opacity: 1;
   margin-top: 1rem;
@@ -65,7 +66,6 @@ body {
 .bayan__item-meme {
   max-width: 15rem;
   box-shadow: 10px 10px 10px #c8c8ec;
-  border: 5px solid #8c8cb8;
   border-radius: 2rem;
 }
 
@@ -75,4 +75,50 @@ body {
 
 .bayan__item-input:checked ~ .bayan__item-tab .bayan__item-title {
   color: #5a5aa1;
+}
+
+.bayan__item-input:active ~ .bayan__item-tab,
+.bayan__item-input:active ~ .bayan__item-content .bayan__item-meme {
+  opacity: 0.5;
+}
+
+/* Adaptive */
+
+@media (min-width: 820px) {
+  body {
+    font-size: 1.3rem;
+  }
+  .bayan {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1220px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+@media (hover: hover) {
+  .arrow {
+    opacity: 0;
+  }
+
+  .bayan__item-input:hover ~ .bayan__item-content {
+    height: 100%;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+
+  .bayan__item-input:hover ~ .bayan__item-tab .arrow {
+    transform: rotate(180deg);
+  }
+
+  .bayan:hover .arrow {
+    opacity: 1;
+  }
+
+  .bayan:hover .bayan__item-title {
+    color: #5a5aa1;
+  }
 }
