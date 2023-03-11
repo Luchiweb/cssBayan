@@ -8,22 +8,26 @@ body {
   margin: 0.5rem;
 }
 
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.main-title {
+  text-align: center;
+  margin-bottom: 0.5em;
+  font-size: 3rem;
 }
 
 .bayan {
   width: 100%;
   max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin: 0 auto;
 }
 
-.bayan__item {
-  margin-top: 1rem;
+.bayan__item-input {
+  display: none;
 }
 
-.bayan__item-title {
+.bayan__item-tab {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,29 +36,43 @@ body {
   border-radius: 1rem;
 }
 
-.bayan__item-input {
-  width: 0;
-  height: 0;
+.bayan__item-title {
+  font-size: 1rem;
+  color: #8282cd;
+}
+
+.arrow {
+  opacity: 1;
+  max-width: 100%;
+  transition: all 1s ease;
 }
 
 .bayan__content {
   height: 0;
   opacity: 0;
-  transition: all 0.7s ease;
+  transition: opacity 0.7s ease-in;
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 
-.bayan__item-input:hover + .bayan__content,
-.bayan__item-input:checked + .bayan__content {
+.bayan__item-input:checked ~ .bayan__content {
   height: 100%;
   opacity: 1;
+  margin-top: 1rem;
 }
 
 .bayan__item-meme {
   max-width: 15rem;
+  box-shadow: 10px 10px 10px #c8c8ec;
+  border: 5px solid #8c8cb8;
+  border-radius: 2rem;
 }
 
-.arrow img {
-  max-width: 100%;
+.bayan__item-input:checked ~ .bayan__item-tab .arrow {
+  transform: rotate(180deg);
+}
+
+.bayan__item-input:checked ~ .bayan__item-tab .bayan__item-title {
+  color: #5a5aa1;
 }
